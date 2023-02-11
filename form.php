@@ -10,16 +10,14 @@ require_once 'assets/php/session.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/form.css" />
 </head>
 
 <body>
     <?php
 
-    include "assets/php/database.php";
+    include "./assets/php/database.php";
 
     if (isset($_POST['submit'])) {
         $username = mysqli_real_escape_string($con, $_POST['username']);
@@ -37,10 +35,10 @@ require_once 'assets/php/session.php';
 
         if ($emailcount > 0) {
     ?>
-    <script>
-    alert("Email already exists!!!!");
-    </script>
-    <?php
+            <script>
+                alert("Email already exists!!!!");
+            </script>
+            <?php
         } else {
             $insertquery = " INSERT INTO purnaDriveData(username,email,password) VALUES('$username','$email','$password') ";
             // $insertquery = " INSERT INTO purnaDriveData(username,email,password) VALUES('$username','$email','$pass') ";
@@ -48,15 +46,15 @@ require_once 'assets/php/session.php';
 
             if ($iquery) {
             ?>
-    <script>
-    alert("Inserted Successful");
-    </script>
-    <?php
+                <script>
+                    alert("Inserted Successful");
+                </script>
+            <?php
             } else {
             ?>
-    <script>
-    alert("Not inserted");
-    </script>
+                <script>
+                    alert("Not inserted");
+                </script>
     <?php
             }
         }
@@ -68,8 +66,7 @@ require_once 'assets/php/session.php';
                 <div class="content">
                     <div class="details">
                         <div class="imgBx">
-                            <img
-                                src="https://scontent.fktm10-1.fna.fbcdn.net/v/t1.6435-9/151131837_1180343149061811_3483781015844367494_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_ohc=Zww2hP-j1BIAX_t5AW9&_nc_ht=scontent.fktm10-1.fna&oh=00_AfBpa28sHXOchiI_aRtXdoDdqZmi_mhJR_polCdLdbNbIg&oe=63CFA8BC" />
+                            <img src="https://scontent.fktm10-1.fna.fbcdn.net/v/t1.6435-9/151131837_1180343149061811_3483781015844367494_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_ohc=Zww2hP-j1BIAX_t5AW9&_nc_ht=scontent.fktm10-1.fna&oh=00_AfBpa28sHXOchiI_aRtXdoDdqZmi_mhJR_polCdLdbNbIg&oe=63CFA8BC" />
                         </div>
                         <p>Purna Drive<i class="fa-solid fa-lock"></i></p>
                     </div>
@@ -135,10 +132,10 @@ require_once 'assets/php/session.php';
         <i class="rightSideBtn"></i>
     </div>
     <script>
-    let popup = document.querySelector(".island_popup");
-    popup.onclick = function() {
-        popup.classList.toggle("active");
-    };
+        let popup = document.querySelector(".island_popup");
+        popup.onclick = function() {
+            popup.classList.toggle("active");
+        };
     </script>
 </body>
 

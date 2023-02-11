@@ -29,7 +29,8 @@ body {
 
 #drive {
   width: max(80%, 20%);
-  background-image: url("https://wallpapers.com/images/hd/macbook-pro-firewatch-sunrise-oei9rpkmlhhabaay.jpg");
+  /* background-image: url("https://wallpapers.com/images/hd/macbook-pro-firewatch-sunrise-oei9rpkmlhhabaay.jpg"); */
+  background-image: url("/assets/img/indexbg.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

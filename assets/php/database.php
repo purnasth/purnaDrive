@@ -1,8 +1,8 @@
 <?php
-$server = "localhost";
-$user = "root";
-$password = "";
-$database = "dbPurnaDrive";
+$server = "sql210.epizy.com";
+$user = "epiz_33544745";
+$password = "ujfQbfNDNZrF";
+$database = "epiz_33544745_dbPurnaDrive";
 
 $con = mysqli_connect($server, $user, $password, $database);
 
