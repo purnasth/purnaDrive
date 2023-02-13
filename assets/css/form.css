@@ -178,7 +178,7 @@ body {
 #check {
   display: none;
 }
-.signup {
+.login {
   position: relative;
   width: 100%;
   height: 100%;
@@ -221,7 +221,7 @@ body {
   /* border-radius: 5px; */
   transition: all 400ms ease;
   /* cursor: pointer; */
-  /* pointer-events: none; */
+  pointer-events: none;
 }
 .inputBox input:focus {
   border-bottom: solid 1px #000;
@@ -239,13 +239,13 @@ body {
   /* border-left: solid 1px blue; */
   /* border-bottom: solid 1px blue; */
 }
-.signup .inputBox input {
+.login .inputBox input {
   background: transparent;
   border-bottom: solid 1px #ccc;
   color: #fff;
 }
-.signup .inputBox input:valid ~ span,
-.signup .inputBox input:focus ~ span {
+.login .inputBox input:valid ~ span,
+.login .inputBox input:focus ~ span {
   background: #000;
   color: #fff;
   transform: translateY(-25px);
@@ -268,12 +268,13 @@ body {
   transition: 0.2s ease-in;
   cursor: pointer;
 }
-.signup-btn {
+.login-btn {
   color: #fff;
   background: transparent;
   outline: solid 2px #fff;
+  margin-top: 20px;
 }
-.signup-btn:hover {
+.login-btn:hover {
   background: #fff;
   color: #573b8a;
   transform: scale(1.1);
@@ -281,13 +282,13 @@ body {
     0 0 10px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.75),
     0 0 10px rgba(255, 255, 255, 1);
 }
-.login-btn {
+.signup-btn {
   background-color: transparent;
   outline: solid 2px #573b8a;
   color: #573b8a;
-  margin-top: 25px;
+  margin-top: 0px;
 }
-.login-btn:hover {
+.signup-btn:hover {
   background: #573b8a;
   color: #fff;
   transform: scale(1.1);
@@ -301,7 +302,7 @@ body {
 .login-btn:active {
   transform: scale(0.9);
 }
-.login {
+.signup {
   height: 460px;
   background: #eee;
   /* backdrop-filter: blur(50px); */
@@ -309,23 +310,27 @@ body {
   transform: translateY(-180px);
   transition: 0.8s ease-in-out;
 }
-.login label {
+.signup label {
   color: #573b8a;
   transform: scale(0.6);
+  margin-bottom: -15px;
 }
 
-#check:checked ~ .login {
+#check:checked ~ .signup {
   transform: translateY(-500px);
 }
-#check:checked ~ .login label {
+#check:checked ~ .signup label {
   transform: scale(1);
 }
-#check:checked ~ .signup label {
+#check:checked ~ .login label {
   transform: scale(0.6);
 }
-
+.login input::-ms-reveal {
+  filter: invert(100%);
+}
 .checkBox {
   text-align: left;
+  margin-top: 5%;
   margin-left: 7%;
   display: block;
   display: flex;
@@ -336,13 +341,15 @@ body {
   cursor: pointer;
 }
 .checkBox span {
-  color: #949292;
+  /* color: #949292; */
+  color: #fff;
   font-size: 0.85rem;
   cursor: pointer;
   margin-left: 5px;
 }
 .checkBox a {
-  color: #573b8a;
+  /* color: #573b8a; */
+  color: #fff;
   font-size: 0.85rem;
   cursor: pointer;
   margin-left: 70px;
@@ -361,83 +368,16 @@ body {
     transform: translateY(-0.1em);
   }
 }
+@keyframes lock {
+  0% {
+      transform: translateY(-2px)
+  }
 
-.wave-group {
-  position: relative;
-  font-family: gill sans, gill sans mt, Calibri, trebuchet ms, sans-serif;
+  to {
+      transform: translateY(0)
+  }
 }
 
-.wave-group .input {
-  font-size: 16px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  width: 200px;
-  border: none;
-  border-bottom: 1px solid #515151;
-  background: transparent;
-}
-
-.wave-group .input:focus {
-  outline: none;
-}
-
-.wave-group .label {
-  color: #999;
-text-transform: uppercase;
-  font-size: 18px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 10px;
-  display: flex;
-}
-
-.wave-group .label-char {
-  transition: 0.2s ease all;
-  transition-delay: calc(var(--index) * 0.05s);
-}
-
-.wave-group .input:focus ~ label .label-char,
-.wave-group .input:valid ~ label .label-char {
-  transform: translateY(-20px);
-  font-size: 14px;
-  color: #5264ae;
-
-  font-weight: 600;
-  background: #5264ae;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.wave-group .bar {
-  position: relative;
-  display: block;
-  width: 200px;
-}
-
-.wave-group .bar:before,
-.wave-group .bar:after {
-  content: "";
-  height: 2px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background: #5264ae;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-
-.wave-group .bar:before {
-  left: 50%;
-}
-
-.wave-group .bar:after {
-  right: 50%;
-}
-
-.wave-group .input:focus ~ .bar:before,
-.wave-group .input:focus ~ .bar:after {
-  width: 50%;
+.action svg {
+  transform: translate(0, -10px);
 }
