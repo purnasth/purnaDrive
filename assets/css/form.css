@@ -30,7 +30,7 @@ body {
   position: absolute;
   inset: 3px;
   /* background: url("https://i.pinimg.com/originals/11/31/75/11317515c5e2b8f45bf2908787950fb6.png"); */
-  background: url("/assets/img/formbg.webp");
+  background: url("../img/formbg.webp");
   background-size: cover;
   background-position: center;
   border-radius: 48px;
@@ -341,13 +341,13 @@ body {
   cursor: pointer;
   margin-left: 5px;
 }
-.checkBox a{
+.checkBox a {
   color: #573b8a;
   font-size: 0.85rem;
   cursor: pointer;
   margin-left: 70px;
 }
-.checkBox a:hover{
+.checkBox a:hover {
   text-decoration: none;
 }
 .fa-solid {
@@ -360,4 +360,84 @@ body {
   to {
     transform: translateY(-0.1em);
   }
+}
+
+.wave-group {
+  position: relative;
+  font-family: gill sans, gill sans mt, Calibri, trebuchet ms, sans-serif;
+}
+
+.wave-group .input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
+}
+
+.wave-group .input:focus {
+  outline: none;
+}
+
+.wave-group .label {
+  color: #999;
+text-transform: uppercase;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  display: flex;
+}
+
+.wave-group .label-char {
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * 0.05s);
+}
+
+.wave-group .input:focus ~ label .label-char,
+.wave-group .input:valid ~ label .label-char {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #5264ae;
+
+  font-weight: 600;
+  background: #5264ae;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wave-group .bar {
+  position: relative;
+  display: block;
+  width: 200px;
+}
+
+.wave-group .bar:before,
+.wave-group .bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264ae;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.wave-group .bar:before {
+  left: 50%;
+}
+
+.wave-group .bar:after {
+  right: 50%;
+}
+
+.wave-group .input:focus ~ .bar:before,
+.wave-group .input:focus ~ .bar:after {
+  width: 50%;
 }
