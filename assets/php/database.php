@@ -19,15 +19,15 @@ $con = mysqli_connect($server, $user, $password, $database);
 
 if ($con) {
 ?>
-    <script>
+    <!-- <script>
         alert("Welcome to Purna Drive");
-    </script>
+    </script> -->
 <?php
 } else {
 ?>
-    <script>
+    <!-- <script>
         alert("No Connection");
-    </script>
+    </script> -->
 <?php
 }
 ?>

@@ -108,3 +108,65 @@ function uploadFile(target) {
     xhr.send(data); //sending form data
   }
 }
+
+/**
+ * Preloader
+ */
+
+
+setTimeout(function() {
+  $('#preloader').fadeToggle();
+}, 1200);
+
+
+
+
+// ========= FOR GALLERY SLIDER ========
+
+let currentSlide = 1;
+const slides = document.querySelectorAll(".slider-wrapper img");
+const sliderControls = document.querySelectorAll(
+    ".slider-control-left, .slider-control-right"
+);
+
+// Show the first slide
+slides[currentSlide - 1].style.display = "block";
+
+// Move to the next or previous slide
+function moveSlider(n) {
+    showSlide((currentSlide += n));
+}
+
+// Show the current slide and hide the rest
+function showSlide(n) {
+    if (n > slides.length) {
+        currentSlide = 1;
+    }
+    if (n < 1) {
+        currentSlide = slides.length;
+    }
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[currentSlide - 1].style.display = "block";
+}
+
+// Add click event listener to the slider controls
+sliderControls.forEach((control) => {
+    control.addEventListener("click", (event) => {
+        if (event.target.classList.contains("slider-control-left")) {
+            moveSlider(-1);
+        } else if (event.target.classList.contains("slider-control-right")) {
+            moveSlider(1);
+        }
+    });
+});
+
+// Add keyboard navigation
+document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+        moveSlider(-1);
+    } else if (event.key === "ArrowRight") {
+        moveSlider(1);
+    }
+});

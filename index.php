@@ -102,5 +102,17 @@ echo '<link rel="icon" href="./assets/icon/favicon.ico"/>';
         </form>
         <!-- </div> -->
     </div>
+
+    <div id="preloader">
+        <div class="loader JS_on">
+            <span class="binary"></span>
+            <span class="binary"></span>
+            <span class="binary"></span>
+            <span class="getting-there">welcome...</span>
+        </div>
+    </div>
+
     <script src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
 </body>

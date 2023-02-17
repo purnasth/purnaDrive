@@ -1,14 +1,3 @@
-<!-- <?php
-require_once './assets/php/session.php';
-$username = $_SESSION['username'];
-if (empty($username)) {
-    header("Location:form.php");
-}
-
-echo '<link rel="stylesheet" href="./assets/css/style.css" />'; echo '<link
-  rel="icon"
-  href="./assets/icon/favicon.ico"
-/>'; ?> -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,7 +8,6 @@ echo '<link rel="stylesheet" href="./assets/css/style.css" />'; echo '<link
     <link rel="icon" href="./assets/icon/favicon.ico" />
     <title>Purna Drive</title>
   </head>
-
   <body>
     <div id="drive">
       <header>
@@ -141,6 +129,21 @@ echo '<link rel="stylesheet" href="./assets/css/style.css" />'; echo '<link
       </form>
       <!-- </div> -->
     </div>
+
+    <div id="preloader">
+      <div class="loader JS_on">
+        <span class="binary"></span>
+        <span class="binary"></span>
+        <span class="binary"></span>
+        <span class="getting-there">welcome...</span>
+      </div>
+    </div>
+
     <script src="./assets/js/script.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </body>
 </html>
