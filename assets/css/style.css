@@ -56,8 +56,8 @@ header {
   /* padding-top: 1em; */
 }
 .handwriting {
-  /* width: 16rem; */
-  /* height: 5rem; */
+  width: 16rem;
+  height: 5rem;
   transition: all 4s ease;
   transition-delay: 3s;
   /* pointer-events: none; */
@@ -66,9 +66,9 @@ header {
   position: relative;
   width: 100%;
   height: 100%;
-  transform: translate(-5%);
+  /* transform: translate(-5%); */
   margin-bottom: -5px;
-  padding: 10px;
+  padding: 10px 0;
 }
 .handwriting .purna-svg .text {
   stroke: #000;
@@ -117,7 +117,7 @@ form :where(i, p) {
 
 form i svg {
   /* margin: 10vh 0 0 0; */
-  /* margin-top: 70px; */
+  margin-top: -20px;
   animation: fly 0.6s ease-in-out infinite alternate;
 }
 
