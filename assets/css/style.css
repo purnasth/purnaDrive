@@ -2,13 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 :root {
-  --clr: #6783fd;
+  /* --clr: #6783fd; */
+  --clr: #5f54d6;
+
   --btn: radial-gradient(#ccc, #666, #222);
   --font_clr: rgba(255, 255, 255, 0.75);
 }
 
 ::selection {
-  color: #fff;
+  color: #fafafa;
   background: var(--clr);
 }
 
@@ -35,6 +37,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  /* background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e); */
+
   padding: 30px;
   box-shadow: 0 0 70px rgba(0, 0, 0, 1);
   border-radius: 50px;
@@ -42,11 +46,23 @@ body {
   border: solid 10px rgba(0, 0, 0, 1);
   position: relative;
 }
+/* #drive:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.25);
+  border-radius: 10px;
+  z-index: 1;
 
+} */
 header {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 #drive header label {
@@ -55,6 +71,47 @@ header {
   filter: drop-shadow(0 0 10px #000);
   /* padding-top: 1em; */
 }
+#drive {
+  position: relative;
+}
+
+header .details {
+  display: flex;
+  /* align-items: center;
+  justify-content: space-between; */
+  gap: 160px;
+  position: absolute;
+  top: -15px;
+}
+header .details a {
+  color: #bdbdbd;
+  text-decoration: none;
+  font-size: 1.15rem;
+  /* font-weight: 600; */
+  transition: all 0.25s ease-in-out;
+  /* margin-top: 20px; */
+}
+header .details a:hover {
+  text-decoration: underline;
+}
+/* header .details a:nth-child(1){
+  color:#0F9D58;
+}
+header .details a:nth-child(2){
+  color:#DB4437;
+} */
+
+.details button {
+  margin: 20px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
 .handwriting {
   width: 16rem;
   height: 5rem;
@@ -71,6 +128,7 @@ header {
   padding: 10px 0;
 }
 .handwriting .purna-svg .text {
+  /* stroke: #fafafa; */
   stroke: #000;
   stroke-dasharray: 9000;
   stroke-dashoffset: 9000;
@@ -78,6 +136,7 @@ header {
   animation: animate-text 5s linear 1 forwards;
 }
 .handwriting .purna-svg .text:hover {
+  /* stroke: #cdcdcd; */
   stroke: #000;
 }
 @-webkit-keyframes animate-text {
@@ -154,6 +213,9 @@ form p {
   #drive form {
     height: 85%;
   }
+  #drive form input {
+    height: 85%;
+  }
   form i {
     font-size: 8em;
   }
@@ -224,6 +286,8 @@ form p {
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   transition: all 0.25s 0.5s ease-in-out;
+  color: #e0d7ff;
+  cursor: pointer;
 }
 
 .dynamic-island:hover {
@@ -302,21 +366,26 @@ justify-content: center;
   /* line-height: 25px; */
 }
 
-.content p {
-  color: #fff;
+/* .content .details a {
+  color: #ffffff90;
   font-size: 0.9em;
-  letter-spacing: 2px;
-  cursor: default;
-  /* visibility: hidden; */
+  text-decoration: none;
+  cursor: pointer;
+  visibility: hidden;
   opacity: 0;
-  /* transition: 0.5s; */
-  position: absolute;
-  top: 0;
-  left: -30px;
-  transition: all 0.5s ease-in-out;
-  /* animation: fly 0.6s ease-in-out infinite alternate; */
+  position: fixed;
+  transition: all 0.25s ease-in-out;
+  z-index: 9999;
+  transform: translate(-30px, 0);
 }
-
+.dynamic-island:hover .content .details a {
+  opacity: 1;
+  visibility: visible;
+}
+.content .details a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
+} */
 /* =========== File Upload Animation =========== */
 section {
   display: flex;
@@ -569,7 +638,6 @@ section .details span {
   background-color: #2f3034;
 }
 
-
 /* 
 #preloader {
   position: fixed;
@@ -617,9 +685,9 @@ section .details span {
   }
 } */
 
-
-#preloader{
-  background-color:#313131;
+#preloader {
+  background-color: #1d1d1f;
+  background-image: linear-gradient(to bottom, #434343 0%, black 100%);
   width: 100%;
   height: 100%;
   position: fixed;
@@ -635,7 +703,6 @@ section .details span {
   /* position: fixed; */
   top: calc(50% - 150px);
   left: calc(50% - 60px);
-
 }
 
 .loader::before,
@@ -649,14 +716,14 @@ section .details span {
   z-index: 1;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
-  border-bottom: 20px solid #fff;
+  border-bottom: 20px solid #f5f5f7;
   transform: scale(0);
   transition: all 0.2s ease;
 }
 
 .loader::after {
   border-right: 15px solid transparent;
-  border-bottom: 20px solid #fff;
+  border-bottom: 20px solid #f5f5f7;
 }
 
 .loader .getting-there {

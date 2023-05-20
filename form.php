@@ -65,7 +65,7 @@ echo '<link rel="icon" href="./assets/icon/favicon.ico" />';
     </script>
     <?php
                 }
-                // header('Location: index.php');
+                // header('Location: admin.php');
                 // exit;
             } else {
                 // echo '<p class="error-message">Wrong Refer Code. Please try again.</p>';
@@ -97,7 +97,7 @@ echo '<link rel="icon" href="./assets/icon/favicon.ico" />';
                 <div class="content">
                     <div class="details">
                         <div class="imgBx">
-                            <img src="./assets/img/purna.webp" />
+                            <img loading="lazy" src="./assets/img/purna.webp" />
                         </div>
                         <p>Purna Drive</p>
                     </div>

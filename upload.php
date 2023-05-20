@@ -7,7 +7,7 @@ if ($_FILES["fileToUpload"]["error"] == UPLOAD_ERR_OK) {
 } else {
   echo "File upload failed.";
 }
-// header("Location:gallery.php");
+// header("Location:gallery.php"); ie index.php
 ?>
-<a href="index.php">Click here to go the index page</a>
-<a href="gallery.php">Click here to open the gallery</a>
+<a href="admin.php">Click here to go the admin page</a>
+<a href="index.php">Click here to open the gallery</a>

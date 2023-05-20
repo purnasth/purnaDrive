@@ -20,7 +20,7 @@ $password = md5(mysqli_real_escape_string($con,$_POST['password']));
 
     if($count > 0){
         $_SESSION['username'] = $username;
-        header("Location:/index.php");
+        header("Location:/admin.php");
     }
     else{
         header("Location:/form.php?error=INVALID CREDENTIALS!!!");

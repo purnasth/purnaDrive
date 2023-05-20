@@ -9,10 +9,16 @@
 // $user = "id20287880_root";
 // $password = "SE4y!xuIGfdgk/qk";
 // $database = "id20287880_dbpurnadrive";
+// *Database for localhost
 $server = "localhost";
 $user = "root";
 $password = "";
 $database = "dbPurnaDrive";
+// ?Database for infinityfree.com Updated
+// $server = "sql206.epizy.com";
+// $user = "epiz_34246768";
+// $password = "2NpTJClSNni";
+// $database = "epiz_34246768_dbPurnaDrive";
 
 
 $con = mysqli_connect($server, $user, $password, $database);
