@@ -65,10 +65,10 @@ echo '<link rel="icon" href="./assets/icon/favicon.ico" />';
     </script>
     <?php
                 }
-                // header('Location: admin.php');
-                // exit;
+                header('Location: admin.php');
+                exit;
             } else {
-                // echo '<p class="error-message">Wrong Refer Code. Please try again.</p>';
+                echo '<p class="error-message">Wrong Refer Code. Please try again.</p>';
                 ?>
     <script>
     alert("Wrong Refer Code. Please try again.");

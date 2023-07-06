@@ -1,4 +1,6 @@
 <?php
+// include './assets/css/gallery.css';
+
 ?>
 <!DOCTYPE html>
 
@@ -20,10 +22,10 @@
           </a>
         </li>
         <li class="list">
-          <a href="/index.php"><span class="text">Gallery</span></a>
+          <a href="/index.php" style="padding-left: 20px;"><span class="text">Gallery</span></a>
         </li>
         <li class="list">
-          <a href="/delete.php"><span class="text">Delete</span></a>
+          <a href="/delete.php" style="padding-left: 20px;"><span class="text">Delete</span></a>
         </li>
         <!-- <div class="indicator"></div> -->
       </ul>
