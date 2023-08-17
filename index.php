@@ -22,7 +22,7 @@ echo '<link rel="icon" href="./assets/icon/favicon.ico"/>';
     </header>
     <div class="gallery">
         <?php
-        $media_files = glob('uploads/*.{jpg,jpeg,png,webp,gif,mp4,hevc,mov,webm,txt,pdf,docx}', GLOB_BRACE);
+        $media_files = glob('uploads/*.{jpg,jpeg,png,webp,gif,mp4,hevc,heif,mov,webm,txt,pdf,docx}', GLOB_BRACE);
 
 
         foreach ($media_files as $file) {

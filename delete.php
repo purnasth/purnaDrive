@@ -24,7 +24,7 @@ echo '<link href="./assets/css/gallery.css" rel="stylesheet"/>'; echo '<link
   ?>
   <div class="gallery">
     <?php
-        $media_files = glob('uploads/*.{jpg,jpeg,png,webp,gif,mp4,webm,txt,pdf,docx}', GLOB_BRACE);
+        $media_files = glob('uploads/*.{jpg,jpeg,png,webp,gif,mp4,hevc,heif,mov,webm,txt,pdf,docx}', GLOB_BRACE);
 
 
         foreach ($media_files as $file) {
