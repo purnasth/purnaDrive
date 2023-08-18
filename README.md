@@ -10,13 +10,8 @@
   <img alt="preloader" src="./assets/img/display/preloader.png" />
   <img alt="gallery" src="./assets/img/display/gallery.png" />
   <img alt="index" src="./assets/img/display/index.png" />
-</div>
-
-<div align="left">
-  <img alt="login" src="./assets/img/display/login.png" />
-</div>
-<div align="right">
-  <img alt="signup" src="./assets/img/display/signup.png" />
+  <img align="left" alt="login" src="./assets/img/display/login.png" />
+  <img align="right" alt="signup" src="./assets/img/display/signup.png" />
 </div>
 
 <br/>
