@@ -8,7 +8,11 @@
 
 <div align="center">
   <img alt="preloader" src="./assets/img/display/preloader.png" />
+  <br/>
+  <br/>
   <img alt="gallery" src="./assets/img/display/gallery.png" />
+  <br/>
+  <br/>
   <img alt="index" src="./assets/img/display/index.png" />
   <img align="left" alt="login" src="./assets/img/display/login.png" />
   <img align="right" alt="signup" src="./assets/img/display/signup.png" />
