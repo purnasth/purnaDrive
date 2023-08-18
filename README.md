@@ -40,6 +40,8 @@
 ## Technologies Used 📚
 
 `PHP` `MySQL` `HTML` `CSS` `JavaScript` `Bootstrap` `jQuery`
+<br/>
+<br/>
 
 ## Pages 📚
 
