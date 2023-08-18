@@ -20,7 +20,9 @@
 
 <br/>
 
-<P>Welcome to PurnaDrive, a dynamic file sharing and management platform built using <strong>PHP</strong> and <strong>MySQL</strong>. Whether you're sharing documents, images, videos, or any other type of file, PurnaDrive makes it simple and efficient.</p>
+<P>
+<h2 align="center">Welcome to PurnaDrive</h2>
+a dynamic file sharing and management platform built using <strong>PHP</strong> and <strong>MySQL</strong>. Whether you're sharing documents, images, videos, or any other type of file, PurnaDrive makes it simple and efficient.</p>
 
 </div>
 
@@ -40,8 +42,6 @@
 ## Technologies Used 📚
 
 `PHP` `MySQL` `HTML` `CSS` `JavaScript` `Bootstrap` `jQuery`
-<br/>
-<br/>
 
 ## Pages 📚
 
