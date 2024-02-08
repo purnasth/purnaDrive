@@ -136,7 +136,7 @@ echo '<link rel="icon" href="./assets/icon/favicon.ico" />';
                             <input class="checkbox-btn" type="checkbox" name="" />
                             <span>remember me</span>
                             <br />
-                            <a href="./assets/php/logout.php">logout</a>
+                            <a href="assets/php/logout.php">logout</a>
                         </div>
 
                         <input type="submit" name="submit" class="login-btn" value="Log in" />
