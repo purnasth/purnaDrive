@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Menus 01</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Kalnia:wght@400;500&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Kalnia", serif;
+        color: black;
+        font-weight: 500;
+        /* letter-spacing: 1px; */
+      }
+
+      button {
+        border: 0;
+        outline: none;
+        background: none;
+        color: inherit;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      .container {
+        height: 100vh;
+        background-color: #101010;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .landing {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        justify-content: center;
+        align-items: center;
+      }
+      section h1 {
+        color: #d7d7d7;
+        font-size: 64px;
+        font-weight: 700;
+      }
+      section p {
+        font-size: 18px;
+        color: #949494;
+      }
+      .section {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .section h1 {
+        color: black;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        padding: 20px 0;
+      }
+      .navbar .nav-logo {
+        font-size: 22px;
+      }
+      .nav-items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        color: #949494;
+        transition: all 0.3s ease-in-out;
+      }
+      .nav-item:hover {
+        color: #fff;
+      }
+
+      .menu-btn {
+        position: fixed;
+        top: 24px;
+        right: 24px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #191b1d;
+        border-radius: 50%;
+        color: white;
+        cursor: pointer;
+        scale: 0;
+        transition: background-color 0.3s ease;
+        z-index: 3;
+      }
+      .menu-btn svg {
+        font-size: 0.75rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        background-color: #1c1d20;
+        color: white;
+        padding: 20vh 11vw 8vh 11vw;
+        display: flex;
+        flex-direction: column;
+        font-size: 48px;
+        transform: translateX(100%);
+        z-index: 2;
+      }
+
+      .menu-header {
+        font-size: 1.25rem;
+        color: #7f7f81;
+        padding: 12px 0;
+        border-bottom: 1px solid #7f7f81;
+        /* margin-bottom: 56px; */
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: absolute;
+        top: 24px;
+        left: 24px;
+      }
+      .menu-items {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 28px;
+        height: 100vh;
+      }
+      .menu-item {
+        color: #949494;
+        transition: all 0.3s ease;
+      }
+      .menu-item:hover {
+        color: #fff;
+        transform: translateY(-10px);
+      }
+
+      .menu.active + .menu-btn {
+        background-color: #455ce9;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+        z-index: 1; /* Ensure it's above other content */
+        display: none; /* Initially hidden */
+      }
+
+      .overlay.active {
+        background-color: rgba(0, 0, 0, 0.5);
+        display: block; /* Show overlay when menu is active */
+      }
+
+      .hamburger {
+        cursor: pointer;
+      }
+
+      .hamburger input {
+        display: none;
+      }
+
+      .hamburger svg {
+        height: 3em;
+        transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .line {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3;
+        transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+          stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .line-top-bottom {
+        stroke-dasharray: 12 63;
+      }
+
+      .hamburger input:checked + svg {
+        transform: rotate(-45deg);
+      }
+
+      .hamburger input:checked + svg .line-top-bottom {
+        stroke-dasharray: 20 300;
+        stroke-dashoffset: -32.42;
+      }
+    </style>
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    /> -->
+  </head>
+  <body>
+    <div class="overlay"></div>
+
+    <aside class="menu">
+      <h2 class="menu-header">
+        <a href="#" class="menu-item">Purna Drive</a>
+      </h2>
+      <ul class="menu-items">
+        <li>
+          <a href="#" class="menu-item">Upload</a>
+        </li>
+        <li>
+          <a href="#" class="menu-item">Login</a>
+        </li>
+        <li>
+          <a href="#" class="menu-item">Gallery</a>
+        </li>
+        <li>
+          <a href="#" class="menu-item">Delete</a>
+        </li>
+      </ul>
+    </aside>
+    <button class="menu-btn" onclick="toggleMenu(event)">
+      <!-- <i class="bi bi-list"></i> -->
+      <!-- <svg
+        width="40"
+        height="40"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h8M4 12h16m-7 6h7"
+        ></path>
+      </svg> -->
+      <label class="hamburger">
+        <input type="checkbox" />
+        <svg viewBox="0 0 32 32">
+          <path
+            class="line line-top-bottom"
+            d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+          ></path>
+          <path class="line" d="M7 16 27 16"></path>
+        </svg>
+      </label>
+    </button>
+
+    <div class="container">
+      <nav class="navbar">
+        <ul class="nav-items">
+          <li>
+            <a href="#" class="nav-item">Upload</a>
+          </li>
+          <li>
+            <a href="#" class="nav-item">Login</a>
+          </li>
+          <li class="nav-logo">
+            <a href="#" class="menu-item">Purna Drive</a>
+          </li>
+          <li>
+            <a href="#" class="nav-item">Gallery</a>
+          </li>
+          <li>
+            <a href="#" class="nav-item">Delete</a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="landing">
+        <h1>Menus Part 02</h1>
+        <p>Menu pop up on scroll using GSAP.</p>
+      </section>
+    </div>
+
+    <section class="section">
+      <h1>Section 2</h1>
+      <p>Menu icon will Pop up in the top-right</p>
+    </section>
+
+    <section class="section">
+      <h1>Section 3</h1>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+      const menuBtn = document.querySelector(".menu-btn");
+      const menu = document.querySelector(".menu");
+      const menuItems = document.querySelectorAll(".menu-item");
+      const overlay = document.querySelector(".overlay");
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const tl = gsap.timeline({ duration: 0.8, ease: "power3.out" });
+
+      function toggleMenu(event) {
+        if (!menu.classList.contains("animating")) {
+          if (menu.classList.contains("active")) {
+            closeMenu(); // Close the menu if it's already active
+          } else {
+            openMenu(); // Open the menu if it's not active
+          }
+        }
+      }
+
+      function openMenu() {
+        menu.classList.add("animating");
+        menu.classList.toggle("active");
+        document.body.classList.toggle("sidebar-open");
+        overlay.classList.toggle("active");
+
+        tl.to(menu, {
+          x: menu.classList.contains("active") ? "0" : "100%",
+          onComplete: function () {
+            menu.classList.remove("animating");
+          },
+        });
+
+        gsap.fromTo(
+          menuItems,
+          {
+            x: 150,
+          },
+          {
+            x: 0,
+            duration: 0.2,
+            stagger: 0.05,
+            ease: "power4.out",
+          }
+        );
+      }
+
+      function closeMenu() {
+        menu.classList.add("animating");
+        menu.classList.remove("active");
+        document.body.classList.remove("sidebar-open");
+        overlay.classList.remove("active");
+
+        tl.to(menu, {
+          x: "100%",
+          onComplete: function () {
+            menu.classList.remove("animating");
+            resetMenuIcon();
+          },
+        });
+      }
+
+      function resetMenuIcon() {
+        const checkbox = document.querySelector(
+          ".hamburger input[type='checkbox']"
+        );
+        if (checkbox) {
+          checkbox.checked = false;
+        }
+      }
+
+      gsap.to(menuBtn, {
+        scrollTrigger: {
+          trigger: document.documentElement,
+          start: 0,
+          //   end: window.innerHeight,
+          end: 1,
+          onLeave: () => {
+            gsap.to(menuBtn, { scale: 1 });
+          },
+          onEnterBack: () => {
+            gsap.to(menuBtn, { scale: 0 });
+          },
+        },
+        duration: 0.25,
+        ease: "power3.out",
+      });
+
+      menuBtn.addEventListener("click", toggleMenu);
+      overlay.addEventListener("click", closeMenu);
+    </script>
+  </body>
+</html>
