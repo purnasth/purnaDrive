@@ -1,6 +1,8 @@
 <div align="center">
 
-<h1><strong>PurnaDrive</strong> - share your real quality memories v1.0.9</h1>
+<h1><strong>PurnaDrive</strong> - share your real quality memories</h1>
+
+<p align="center"> - v1.0.9</p>
 
 <h2>
   <a href="https://purnadrive.rf.gd/">purnadrive.rf.gd</a>
