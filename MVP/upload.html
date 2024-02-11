@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Uploader</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <div id="navbarContainer"></div>
+
+    <div class="upload">
+
+        <div class="form-container">
+            <h2>File Uploader</h2>
+            <form id="file-upload" enctype="multipart/form-data">
+                <input type="file" name="file" id="file" required><br>
+                <input type="submit" value="Upload">
+            </form>
+            <p id="file-name"></p>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="assets/js/app.js"></script>
+
+
+    <script>
+        document.getElementById("file-upload").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var fileInput = document.getElementById("file");
+            var fileNameDisplay = document.getElementById("file-name");
+            if (fileInput.files.length > 0) {
+                fileNameDisplay.textContent = "File Name: " + fileInput.files[0].name;
+            } else {
+                fileNameDisplay.textContent = "No file selected";
+            }
+        });
+    </script>
+</body>
+
+</html>

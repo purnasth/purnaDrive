@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div id="navbarContainer"></div>
+    <div class="gallery" id="gallery"></div>
+
+
+
+
+    <script>
+        // Simulated array of uploaded image URLs
+        var uploadedImages = [
+            "https://via.placeholder.com/200",
+            "https://via.placeholder.com/200",
+            "https://via.placeholder.com/200"
+        ];
+
+        var gallery = document.getElementById("gallery");
+        uploadedImages.forEach(function (imageUrl) {
+            var img = document.createElement("img");
+            img.src = imageUrl;
+            gallery.appendChild(img);
+        });
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
